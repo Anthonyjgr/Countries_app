@@ -1,0 +1,47 @@
+.container {
+    /* background: var(--dark-blue-gradient); */
+    height: 150px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: white;
+    flex-direction: column;
+
+    animation-name: colorChange;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.socialMediaLogo {
+    display: flex;
+
+}
+
+.socialMediaLogo img {
+    width: 45px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+
+}
+.img{
+    transition: transform .4s;
+}
+
+
+@keyframes colorChange {
+    0% {
+        background-color: rgb(2, 93, 142);
+    }
+
+    100% {
+        background-color: rgb(0, 2, 71);
+    }
+}
+
+
+.img:hover {
+    transform: scale(1.2);
+  }

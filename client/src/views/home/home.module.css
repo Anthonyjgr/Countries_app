@@ -1,0 +1,31 @@
+:root {
+    /* --dark-blue-gradient: linear-gradient(to right, rgb(1, 0, 38), rgb(6, 0, 173)); */
+    --dark-blue-gradient: linear-gradient(to right, rgb(0, 238, 255), rgb(1, 0, 38));
+    --dark-blue-color: rgb(1, 0, 38);
+    --light-blue-color: rgb(6, 0, 173);
+    --light-grey-color: rgb(81, 81, 81);
+    --dark-grey-color: rgb(37, 37, 37);
+}
+
+.cointainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.divs {
+    display: flex;
+    width: 100%;
+}
+
+.video {
+    position: fixed;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+    z-index: 100
+}

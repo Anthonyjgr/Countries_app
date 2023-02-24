@@ -1,0 +1,76 @@
+.card {
+  width: 210px;
+  height: 280px;
+  background: rgba(242, 242, 243, 0.792);
+  border-radius: 30px;
+  box-shadow: 15px 15px 30px #bebebe;
+  transition: transform .4s;
+}
+
+.card:hover {
+  transform: scale(1.08);
+}
+
+.divImg {
+  display: flex;
+  width: auto;
+  justify-content: center;
+}
+
+.img {
+  box-shadow: 0px 0px 15px #bebebe;
+  border-bottom: 5px rgb(164, 163, 163) solid;
+  width: 210px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 30px 30px 0px 0px;
+
+}
+
+.textContainer {
+  height: 80px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  margin: 5px;
+}
+
+.text {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+}
+
+.divButton {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.button {
+
+  box-shadow: 5px 5px 10px #bebebe;
+  padding: 10px 2rem;
+  outline-offset: 3px;
+  border: 0;
+  font-size: 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: whitesmoke;
+  color: var(--dark-grey-color);
+  cursor: pointer;
+  transition: 0.7s;
+
+}
+
+.button:hover {
+  color: white;
+  background: rgb(0, 0, 104);
+}
