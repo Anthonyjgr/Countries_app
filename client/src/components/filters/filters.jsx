@@ -22,6 +22,7 @@ const Filters = () => {
 
     useEffect(() => {
         dispatch(getCountryByName(inputSeachByName))
+        dispatch(getPages(1))
     }, [dispatch, inputSeachByName])
 
     const homeHandler = () => {
