@@ -6,7 +6,7 @@ import {
     GET_COUNTRIES_BY_ID,
     SORT_BY_FILTER,
     GET_ACTIVITIES,
-
+    PAGINATED
 } from "./actionTypes";
 import axios from "axios"
 
@@ -41,7 +41,7 @@ export const postActivities = (activity) => {
 
 export const getCountriesById = (id) => {
     return async function (dispatch) {
-        try { 
+        try {
             const dbData = await axios.get(`/countries/${id}`);
             const foundCountry = dbData.data;
 
@@ -82,6 +82,13 @@ export const sortBy = (payload) => {
 export const getCountriesByActivity = (payload) => {
     return {
         type: ACTIVITY_FILTER,
+        payload
+    }
+}
+
+export const getPages = (payload) => {
+    return {
+        type: PAGINATED,
         payload
     }
 }

@@ -7,6 +7,7 @@ import {
     sortBy,
     getCountriesByActivity,
     getActivities,
+    getPages
 } from "../../redux/actions";
 import Style from "./filters.module.css"
 
@@ -29,10 +30,12 @@ const Filters = () => {
 
     const handlerContinent = (e) => {
         dispatch(filterByContinent(e.target.value));
+        dispatch(getPages(1))
     };
 
     const HandlerSort = (e) => {
         dispatch(sortBy(e.target.value));
+        dispatch(getPages(1))
     };
 
     useEffect(() => {
@@ -41,7 +44,7 @@ const Filters = () => {
 
     const activityHandler = (e) => {
         dispatch(getCountriesByActivity(e.target.value));
-
+        dispatch(getPages(1))
     };
 
     return (

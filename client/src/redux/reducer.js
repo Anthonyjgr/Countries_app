@@ -6,6 +6,7 @@ import {
     ACTIVITY_FILTER,
     GET_COUNTRIES_BY_ID,
     SORT_BY_FILTER,
+    PAGINATED
 } from "./actionTypes";
 
 
@@ -13,7 +14,8 @@ const initialState = {
     countries: [],
     allCountries: [],
     countryDetail: [],
-    allActivities: []
+    allActivities: [],
+    paginated: 1,
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -95,9 +97,15 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 allActivities: action.payload
             }
+        case PAGINATED:
+            return {
+                ...state,
+                paginated: action.payload
+            }
         default:
             return { ...state };
     }
+
 }
 
 export default rootReducer;

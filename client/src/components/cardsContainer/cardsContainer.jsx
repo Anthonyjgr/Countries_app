@@ -9,16 +9,17 @@ import Paginated from "../paginated/paginated";
 const CardsContainer = () => {
     const dispatch = useDispatch()
     const countries = useSelector(state => state.countries)
+    const currentePage = useSelector(state => state.paginated)
 
-    const [currentePage, setCurrentePage] = useState(1)
+    // const [currentePage, setCurrentePage] = useState(1)
     const [countriesPerPage] = useState(10)
     const indexOfLastCountry = currentePage * countriesPerPage
     const indexOfFirstCountry = indexOfLastCountry - countriesPerPage
     const currentCountry = countries.slice(indexOfFirstCountry, indexOfLastCountry)
 
-    const paginated = (pageNumber) => {
-        setCurrentePage(pageNumber)
-    }
+    // const paginated = (pageNumber) => {
+    //    setCurrentePage(pageNumber)
+    // }
 
     useEffect(() => {
         dispatch(getCountries())
@@ -30,7 +31,7 @@ const CardsContainer = () => {
             <Paginated
                 countriesPerPage={countriesPerPage}
                 countries={countries.length}
-                paginated={paginated}
+                //paginated={paginated}
             />
             </div>
             <div className={Style.container}>

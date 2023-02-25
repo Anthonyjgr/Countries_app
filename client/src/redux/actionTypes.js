@@ -6,5 +6,6 @@ export const CONTINENT_FILTER = "CONTINENT_FILTER";
 export const ACTIVITY_FILTER = "ACTIVITY_FILTER";
 export const SORT_BY_FILTER = "SORT_BY_FILTER";
 export const GET_ACTIVITIES = "GET_ACTIVITIES";
+export const PAGINATED = "PAGINATED";
 
 
