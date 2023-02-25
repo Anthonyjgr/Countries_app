@@ -1,22 +1,18 @@
 import React from "react";
 import Style from "./paginated.module.css"
-import { useSelector,useDispatch } from "react-redux";
-import {getPages} from "../../redux/actions"
+import { useSelector, useDispatch } from "react-redux";
+import { getPages } from "../../redux/actions"
 
 
 
 const Paginated = ({ countriesPerPage, countries }) => {
     const currentePage = useSelector(state => state.paginated)
-    const dispatch= useDispatch()
+    const dispatch = useDispatch()
 
     const pageNumbers = [];
 
     for (let index = 0; index < Math.ceil(countries / countriesPerPage); index++) {
         pageNumbers.push(index + 1)
-    }
-
-    const nextPage = () => {
-
     }
 
     return (
@@ -32,9 +28,9 @@ const Paginated = ({ countriesPerPage, countries }) => {
                 })
             } */}
 
-            <button onClick={()=>dispatch(getPages(currentePage-1))}>{"<"}</button>
+            {pageNumbers === 0 ? null : <button onClick={() => dispatch(getPages(currentePage - 1))}>{"<"}</button>}
             <button><p>{currentePage}</p></button>
-            <button onClick={()=>dispatch(getPages(currentePage+1))}>{">"}</button>
+            {pageNumbers === pageNumbers[pageNumbers.length - 1] ? null : <button onClick={() => dispatch(getPages(currentePage + 1))}>{">"}</button>}
         </div>
     )
 }
