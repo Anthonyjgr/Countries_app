@@ -86,7 +86,7 @@ export const getCountriesByActivity = (payload) => {
     }
 }
 
-export const getPages = (payload) => {
+export  const getPages = (payload) => {
     return {
         type: PAGINATED,
         payload

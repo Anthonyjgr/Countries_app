@@ -1,7 +1,7 @@
 import React from "react";
 import Style from "./paginated.module.css"
 import { useSelector,useDispatch } from "react-redux";
-import getPages from "../../redux/actions"
+import {getPages} from "../../redux/actions"
 
 
 
