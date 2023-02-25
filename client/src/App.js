@@ -3,7 +3,7 @@ import NavBar from "./components/navBar/navBar";
 import { Detail, Form, Home, Landing } from "./views";
 import style from "./App.module.css";
 import axios from "axios";
-axios.defaults.baseURL="countriesapp-production-492d.up.railway.app/"
+axios.defaults.baseURL="https://countriesapp-production-492d.up.railway.app/"
 
 function App() {
   const location = useLocation()
