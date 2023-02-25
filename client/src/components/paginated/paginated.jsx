@@ -28,7 +28,9 @@ const Paginated = ({ countriesPerPage, countries }) => {
                 })
             } */}
 
-            {pageNumbers === 0 ? null : <button onClick={() => dispatch(getPages(currentePage - 1))}>{"<"}</button>}
+            {pageNumbers === 1 ?
+                <button onClick={() => dispatch(getPages(currentePage))}>{"<"}</button> :
+                <button onClick={() => dispatch(getPages(currentePage - 1))}>{"<"}</button>}
             <button><p>{currentePage}</p></button>
             {pageNumbers === pageNumbers[pageNumbers.length - 1] ? null : <button onClick={() => dispatch(getPages(currentePage + 1))}>{">"}</button>}
         </div>
