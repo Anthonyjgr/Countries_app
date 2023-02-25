@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { getPages } from "../../redux/actions"
 
 
-
 const Paginated = ({ countriesPerPage, countries }) => {
     const currentePage = useSelector(state => state.paginated)
     const dispatch = useDispatch()
@@ -12,27 +11,28 @@ const Paginated = ({ countriesPerPage, countries }) => {
     const pageNumbers = [];
 
     for (let index = 0; index < Math.ceil(countries / countriesPerPage); index++) {
-        pageNumbers.push(index + 1)
+        pageNumbers.push(index +1)
     }
 
     return (
         <div className={Style.container} >
-            {/* {
-                pageNumbers &&
-                pageNumbers.map(number => {
-                    return (
-                        <div className={Style.number} key={number}>
-                            <p  onClick={() => paginated(number)}>{number}</p>
-                        </div>
-                    )
-                })
-            } */}
-
-            {pageNumbers === 1 ?
-                <button onClick={() => dispatch(getPages(currentePage))}>{"<"}</button> :
-                <button onClick={() => dispatch(getPages(currentePage - 1))}>{"<"}</button>}
-            <button><p>{currentePage}</p></button>
-            {pageNumbers === pageNumbers[pageNumbers.length - 1] ? null : <button onClick={() => dispatch(getPages(currentePage + 1))}>{">"}</button>}
+            <div className={Style.selector}>
+                {
+                    currentePage === 1 ?
+                        <button className={Style.buttons}></button> :
+                        <button className={Style.buttons} onClick={() => dispatch(getPages(currentePage - 1))}>{"<"}</button>
+                }
+            </div>
+            <div>
+                <button className={Style.selector}>{currentePage}</button>
+            </div>
+            <div className={Style.selector}>
+                {
+                    currentePage === pageNumbers.length ?
+                        <button className={Style.buttons}></button> :
+                        <button className={Style.buttons} onClick={() => dispatch(getPages(currentePage + 1))}>{">"}</button>
+                }
+            </div>
         </div>
     )
 }
