@@ -12,7 +12,7 @@ import axios from "axios"
 
 export const getCountries = () => {
     return async function (dispatch) {
-        const dbData = await axios.get("http://localhost:3001/countries");
+        const dbData = await axios.get("/countries");
         const countries = dbData.data
         dispatch({ type: GET_COUNTRIES, payload: countries });
     };
@@ -20,7 +20,7 @@ export const getCountries = () => {
 
 export const getActivities = () => {
     return async function (dispatch) {
-        const dbData = await axios.get("http://localhost:3001/activities");
+        const dbData = await axios.get("/activities");
         const activities = dbData.data
         dispatch({ type: GET_ACTIVITIES, payload: activities });
     };
@@ -30,7 +30,7 @@ export const postActivities = (activity) => {
     return async function () {
         try {
             const newAct = await axios.post(
-                "http://localhost:3001/activities",
+                "/activities",
                 activity
             );
             return newAct
@@ -41,8 +41,8 @@ export const postActivities = (activity) => {
 
 export const getCountriesById = (id) => {
     return async function (dispatch) {
-        try {
-            const dbData = await axios.get(`http://localhost:3001/countries/${id}`);
+        try { 
+            const dbData = await axios.get(`/countries/${id}`);
             const foundCountry = dbData.data;
 
             dispatch({ type: GET_COUNTRIES_BY_ID, payload: foundCountry });
@@ -55,7 +55,7 @@ export const getCountriesById = (id) => {
 export const getCountryByName = (name) => {
     return async function (dispatch) {
         try {
-            const dbData = await axios.get(`http://localhost:3001/countries?name=${name}`);
+            const dbData = await axios.get(`/countries?name=${name}`);
             const foundCountry = dbData.data;
 
             dispatch({ type: GET_COUNTRY_BY_NAME, payload: foundCountry });
