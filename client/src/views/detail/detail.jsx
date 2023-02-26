@@ -89,7 +89,7 @@ const Detail = () => {
                             </div>
                             <div className={Style.cardsDivs}>
                                 <img alt ="difficulty_icon"  src={difficulty}></img>
-                                <h1 className={Style.cardsText}>Difficultu: {a.difficulty}/5</h1>
+                                <h1 className={Style.cardsText}>Difficulty: {a.difficulty}/5</h1>
                             </div>
                             <div className={Style.cardsDivs}>
                                 <img alt ="duration_icon" src={duration}></img>
