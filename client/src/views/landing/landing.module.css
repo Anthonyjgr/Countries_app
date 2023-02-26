@@ -1,153 +1,130 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 .container {
+  justify-content: center;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-image: url('../../assets/map_world_dark_blue.jpeg');
-  background-repeat: no-repeat;
+  width: 100%;
   height: 100vh;
-  background-size: cover;
 }
 
-.centralBox {
+.ContainercentralBox {
   display: flex;
-  flex-direction: column;
-  margin-top: 50px;
-  width: 310px;
-  height: 420px;
-  border: 2px solid white;
-  padding: 10px;
-  background-color: rgba(1, 24, 47, 0.863);
-  align-items: center;
+  flex-wrap: wrap;
+  border: 3px solid black;
+  width: auto;
+  height: auto;
+  max-width: 90%;
+  border-radius: 13px;
+  box-shadow: 10px 10px 20px #797979;
+  margin: 20px;
+}
+
+.leftBox {
+  display: flex;
+  width: 450px;
+  height: 350px;
+  max-height: 30vh;
   border-radius: 10px;
-
-
-  animation-name: borderColorChange;
-  animation-duration: 4s;
-  animation-iteration-count:infinite;
-  animation-direction:alternate;
-
-}
-
-@keyframes borderColorChange {
-  0% {
-    border: 2px solid aqua;
-  }
-  100% {
-    border:2px solid rgb(255, 255, 255);
-  }
-}
-@keyframes colorAndZoomChange {
-  0% {
-    background: aqua;
-    transform: scale(.8);
-    color: rgb(0, 98, 255);
-  }
-  100% {
-    background:rgb(208, 255, 0);
-    transform: scale(.9);
-  }
-}
-@keyframes colorChange {
-  0% {
-    background: aqua;
-  }
-  100% {
-    background: rgb(255, 255, 255);
-  }
-}
-
-.txtContainer {
-  border-radius: 15px;
-}
-
-.separador {
-  display: flex;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  height: 5px;
-  border-radius: 5px;
-  width: 260px;
-  background: white;
-  animation-name: colorChange;
-  animation-duration: 2s;
-  animation-iteration-count:infinite;
-  animation-direction:alternate;
-}
-
-.txt1 {
-  margin-top: 20px;
-  -webkit-text-stroke: 1px rgb(2, 155, 250);
-  color: rgb(2, 155, 250);
-  display: flex;
-  font-size: 38px;
-  font-family: 'Days One', sans-serif;
+  align-items: center;
   justify-content: center;
 }
 
-.txt2 {
-  -webkit-text-stroke: 1px rgb(255, 255, 255);
-  color: rgb(247, 247, 247);
-  display: flex;
-  font-size: 38px;
-  font-family: 'Days One', sans-serif;
-  justify-content: center;
-
+.rightBox {
+  width: 450px;
+  height: 350px;
+  max-height: 30vh;
+  background-image: url("../../assets/map_world_dark_blue.jpeg");
+  background-size: cover;
+  border-radius: 10px;
 }
 
-.buttonContainer {
+.containerButton {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-}
-
-.yes {
-  display: flex;
-  justify-content: center;
+  height: 100%;
 }
 
 .button {
-  margin-top: 30px;
-  border-radius: 15px;
-  width: 200px;
-  height: 60px;
-  font-family: 'Days One', sans-serif;
-  border: 0;
-  color: rgb(6, 1, 83);
-  font-size: 35px;
-  font-weight: 800;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  border: none;
+  border-radius: 10px;
+  width: 300px;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 400;
   transition: transform .4s;
-  background: linear-gradient(45deg, rgb(15, 2, 61), rgb(7, 222, 255));
-
-  animation-name: colorAndZoomChange;
-  animation-duration: 4s;
-  animation-iteration-count:infinite;
-  animation-direction:alternate;
+  animation-name: colorChange;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 .button:hover {
-  transform: scale(1.08);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+@keyframes colorChange {
+  0% {
+    background: aqua;
+  }
+
+  50% {
+    background: white;
+  }
+
+  100% {
+    background: rgb(208, 255, 0);
+  }
+}
+
+.lines1 {
+  border-radius: 10px;
+  width: 900px;
+  height: 3px;
+  background-color: rgb(169, 167, 167);
+}
+
+.lines {
+  border-radius: 10px;
+  width: 900px;
+  height: 3px;
+  background-color: black;
 }
 
 .iconsContainer {
-  margin-top: 10px;
+  margin: 5px;
+  width: 218px;
+  height: 70px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
+  flex-direction: row;
+  border-radius: 10px;
+}
+
+.txtContainer {
+  display: flex;
+  width: 90%;
+}
+
+.txt {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .png {
+  filter: drop-shadow(5px 5px 10px #797979);
+  margin: 10px;
+  width: 50px;
   transition: transform .4s;
-  width: 60px;
+
 }
 
 .png:hover {
   transform: scale(1.1);
+  cursor: pointer;
 }
