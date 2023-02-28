@@ -258,6 +258,17 @@
 
 @media screen and (max-width: 720px) {
 
+    .mainContainer {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
     .upContainer1 {
         margin-top: 20px;
     }
@@ -310,25 +321,19 @@
     }
 
     .downContainer2 {
-        height: 400px;
+        height: 500px;
     }
 
-    .mainContainer {
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 30px;
+
+    .downRight{
+        height: 500px;
     }
 
     .upContainer2 {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 400px;
+        height: 500px;
         width: 100%;
         max-width: 90%;
         background-color: rgb(255, 255, 255);
@@ -344,6 +349,11 @@
         height: 350px;
         margin: 0;
         margin-bottom: 10px;
+    }
+
+    .contentDownRight{
+        height: 500px;
+        margin-bottom: 0px;
     }
 
     .txtLeftDown{
@@ -378,7 +388,7 @@
     }
 
     .footer {
-        margin-top: 40px;
+        margin-top: 0;
         width: 100vw;
     }
 
