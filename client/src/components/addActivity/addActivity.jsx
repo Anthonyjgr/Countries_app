@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCountries, postActivities } from "../../redux/actions";
 import Style from "./addActivity.module.css"
 
-
-
 const AddActivity = () => {
 
     const countries = useSelector(state => state.countries).sort((a, b) => {
@@ -98,7 +96,7 @@ const AddActivity = () => {
     }
 
     const handlerSubmit = (e) => {
-       // e.preventDefault();
+        // e.preventDefault();
         dispatch(postActivities(form))
         alert(`You have been created the new activity ${form.name}`)
         setForm({
@@ -122,7 +120,8 @@ const AddActivity = () => {
         let errors = {}
         if (!form.name) {
             errors.name = 'Name is required'
-        } else if (!/^[ a-zA-ZÀ-ÿ\u00f1\u00d1]*$/g.test(form.name)) {
+        }
+        if (!/^[ a-zA-ZÀ-ÿ\u00f1\u00d1]*$/g.test(form.name)) {
             errors.name = 'Name is invalid'
         }
         if (!form.duration || form.duration < 1) {
@@ -140,17 +139,14 @@ const AddActivity = () => {
         return errors
     }
 
-
     const filteredCountriesForMap = countries.filter((country) => !form.CountryId.includes(country.id))
-
-   
 
     return (
 
         <form className={Style.container} onSubmit={handlerSubmit}>
             <div>
                 <div className={Style.header}>
-                   <span>CREATE ACTIVITY</span> 
+                    <span>CREATE ACTIVITY</span>
                 </div>
                 <div >
                     <span className={Style.inputs}>ACTIVITY NAME</span>
@@ -159,11 +155,12 @@ const AddActivity = () => {
                         autoComplete="off"
                         className={Style.box}>
                     </input>
+                    {error.name === 'Name is invalid' && <span className={Style.Error}>NAME IS INVALID</span>}
                 </div>
                 <span className={Style.inputs}>DIFFICULTY</span>
                 <div>
                     <select className={Style.box} onChange={selectDifficultyHandler}>
-                        <option value="" hidden>{error.difficulty && "DIFFICULTY IS REQUIRED" }</option>
+                        <option value="" hidden>{error.difficulty && "DIFFICULTY IS REQUIRED"}</option>
                         {difficultySelect.map(item => <option key={item} name="difficulty" value={item}>{item}</option>)}
                     </select>
                 </div>
@@ -177,7 +174,7 @@ const AddActivity = () => {
                 <span className={Style.inputs}>COUNTRY</span>
                 <div>
                     <select className={Style.box} onChange={(e) => selectCountryHandler(e.target.value)}>
-                        <option value="" hidden>{error.CountryId && "COUNTRY IS REQUIRED"}</option>
+                        <option value="" hidden>{error.CountryId ? "COUNTRY IS REQUIRED" : "SELECT COUNTRY"}</option>
                         {filteredCountriesForMap?.map(item => <option key={item.id} value={item.id}>{item.name.toUpperCase()}</option>)}
                     </select>
                 </div>
@@ -201,7 +198,7 @@ const AddActivity = () => {
                 {
                     names.map(country =>
                         <div key={country.id}>
-                            <button  className={Style.deleteButton} onClick={() => deleteFlagHandler(country.id)}>x</button>
+                            <button className={Style.deleteButton} onClick={() => deleteFlagHandler(country.id)}>x</button>
                             <img className={Style.flags} src={country.flagImage} alt={country.name}>
                             </img>
                         </div>
