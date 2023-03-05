@@ -3,10 +3,14 @@ import instagram_black from "../../assets/instagram_black.png"
 import github_black from "../../assets/github_black.png"
 import Style from "./landing.module.css"
 import { Link } from "react-router-dom"
+import Spline from '@splinetool/react-spline';
 
 const Landing = () => {
     return (
         <div className={Style.container}>
+            <div className={Style.world}>
+                <Spline scene="https://prod.spline.design/wIns7i7lB-YwzUhR/scene.splinecode" />
+            </div>
             <div className={Style.ContainercentralBox}>
                 <div className={Style.leftBox}>
                     <div className={Style.txtContainer}>

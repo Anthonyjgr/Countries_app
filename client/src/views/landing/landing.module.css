@@ -7,6 +7,10 @@
   height: 100vh;
 }
 
+.world {
+  width: 200px;
+}
+
 .ContainercentralBox {
   display: flex;
   flex-wrap: wrap;
@@ -185,7 +189,7 @@
     height: 3px;
     background-color: rgb(169, 167, 167);
   }
-  
+
   .lines {
     border-radius: 10px;
     width: 90%;
